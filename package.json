@@ -1,6 +1,6 @@
 {
-  "name": "vue-multiselect",
-  "version": "2.1.0",
+  "name": "vue-kmultiselect",
+  "version": "0.0.1",
   "private": false,
   "types": "index.d.ts",
   "scripts": {
@@ -92,7 +92,7 @@
   "author": "Damian Dulisz <damian.dulisz@gmail.com>",
   "jsnext:main": "dist/vue-multiselect.min.js",
   "bugs": {
-    "url": "https://github.com/shentao/vue-multiselect/issues"
+    "url": "https://github.com/AlexLusitania/vue-multiselect/issues"
   },
   "jspm": {
     "main": "dist/vue-multiselect.min.js",
@@ -101,9 +101,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shentao/vue-multiselect.git"
+    "url": "git+https://github.com/AlexLusitania/vue-multiselect.git"
   },
-  "description": "Multiselect component for vue.js",
+  "description": "Just a little fork of the multiselect component for vue.js of Shentao",
   "unpkg": "dist/vue-multiselect.min.js",
   "engines": {
     "node": ">= 4.0.0",
