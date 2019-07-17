@@ -17,7 +17,7 @@ function includes (str, query) {
   if (str === undefined) str = 'undefined'
   if (str === null) str = 'null'
   if (str === false) str = 'false'
-  const text = this.diacriticsSensitive ? str.toString().toLowerCase() : _deburr(str.toString().toLowerCase())
+  const text = _deburr(str.toString().toLowerCase())
   return text.indexOf(query.trim()) !== -1
 }
 
@@ -354,7 +354,7 @@ export default {
     },
     filteredOptions () {
       const search = this.search || ''
-      const normalizedSearch = this.search.toLowerCase().trim() ? search.toLowerCase().trim() : _deburr(search.toLowerCase().trim())
+      const normalizedSearch = this.diacriticsSensitive ? search.toLowerCase().trim() : _deburr(search.toLowerCase().trim())
 
       let options = this.options.concat()
 
