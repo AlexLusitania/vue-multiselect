@@ -113,5 +113,7 @@
     "dist",
     "src"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
 }

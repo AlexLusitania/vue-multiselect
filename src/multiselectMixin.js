@@ -1,3 +1,7 @@
+import {
+  deburr as _deburr
+} from 'lodash'
+
 function isEmpty (opt) {
   if (opt === 0) return false
   if (Array.isArray(opt) && opt.length === 0) return true
@@ -13,7 +17,7 @@ function includes (str, query) {
   if (str === undefined) str = 'undefined'
   if (str === null) str = 'null'
   if (str === false) str = 'false'
-  const text = str.toString().toLowerCase()
+  const text = this.diacriticsSensitive ? str.toString().toLowerCase() : _deburr(str.toString().toLowerCase())
   return text.indexOf(query.trim()) !== -1
 }
 
@@ -315,6 +319,15 @@ export default {
     preselectFirst: {
       type: Boolean,
       default: false
+    },
+    /**
+     * If the search is sensitive to diacritics
+     * @default false
+     * @type {Boolean}
+    */
+    diacriticsSensitive: {
+      type: Boolean,
+      default: false
     }
   },
   mounted () {
@@ -341,7 +354,7 @@ export default {
     },
     filteredOptions () {
       const search = this.search || ''
-      const normalizedSearch = search.toLowerCase().trim()
+      const normalizedSearch = this.search.toLowerCase().trim() ? search.toLowerCase().trim() : _deburr(search.toLowerCase().trim())
 
       let options = this.options.concat()
 
