@@ -63,7 +63,7 @@
             <template>{{ currentOptionLabel }}</template>
           </slot>
         </span>
-        <span 
+        <span
           v-if="isPlaceholderVisible"
           class="multiselect__placeholder"
           @mousedown.prevent="toggle">
@@ -123,7 +123,7 @@
             </li>
             <li v-show="showNoOptions && (options.length === 0 && !search && !loading)">
               <span class="multiselect__option">
-                <slot name="noOptions">List is empty.</slot>
+                <slot name="noOptions"></slot>
               </span>
             </li>
             <slot name="afterList"></slot>
